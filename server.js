@@ -1,5 +1,4 @@
 import express from 'express';
-import https from 'https';
 import fs from 'fs';
 import path from 'path';
 import csp from 'helmet-csp';
@@ -13,11 +12,6 @@ import App from './App.js';
 
 const swFile = fs.readFileSync(path.join('sw.js'), { encoding: 'utf-8' });
 const manifestFile = fs.readFileSync(path.join('manifest.json'), { encoding: 'utf-8' });
-
-const credentials = {
-  key: fs.readFileSync(path.join('key.pem')),
-  cert: fs.readFileSync(path.join('cert.pem'))
-};
 
 function handleRender(req, res) {
   // Renders APP component into an HTML string
@@ -97,18 +91,6 @@ app.get('/', handleRender);
 app.get('*', function(req, res) {
   res.status(404).send('Page Not found');
 });
-
-// const sslServer = https.createServer(credentials, app);
-
-// // Start server
-// sslServer.listen(8443, function () {
-//   console.log('SSL Server listening on port', 8443);
-// });
-
-// var a = https.createServer(credentials, function (req, res) {
-//   res.writeHead(200);
-//   res.end("hello world\n");
-// }).listen(8000);
 
 // Start server
 app.listen(3000);
