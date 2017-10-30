@@ -76,14 +76,14 @@ app.get('/manifest.json', function (req, res) {
 // Serve JS
 app.get('*.js', function (req, res, next) {
   req.url = req.url + '.gz';
-  res.set({'Content-Type': 'application/javascript', 'Content-Encoding': 'gzip'});
+  res.set({'Content-Type': 'application/javascript', 'Content-Encoding': 'gzip', 'Cache-Control': 'max-age=2592000, s-maxage=2592000'});
   next();
 });
 
 // Serve CSS
 app.get('*.css', function (req, res, next) {
   req.url = req.url + '.gz';
-  res.set({'Content-Type': 'text/css', 'Content-Encoding': 'gzip'});
+  res.set({'Content-Type': 'text/css', 'Content-Encoding': 'gzip', 'Cache-Control': 'max-age=2592000, s-maxage=2592000'});
   next();
 });
 

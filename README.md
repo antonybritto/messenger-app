@@ -1,4 +1,4 @@
-# Messaging APP Prototype
+# Messaging APP
 
 Install dependencies:
 
