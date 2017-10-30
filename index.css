@@ -1,0 +1,136 @@
+/* Common */
+.align-center {
+   text-align: center;
+}
+
+/* Drawer CSS */
+@keyframes slideInLeft {
+	from {
+		transform: translate3d(-100%, 0, 0);
+		visibility: visible;
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+@keyframes slideOutLeft {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+	
+	to {
+		visibility: hidden;
+		transform: translate3d(-100%, 0, 0);
+	}
+}
+.drawer .drawer-overlay {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(51, 51, 51, 0.5);
+	overflow-y: auto;
+	z-index: 10000;
+	opacity: 0;
+	will-change: opacity, visibility;
+	visibility: hidden;
+}
+.drawer .drawer-content {
+	position: fixed;
+	width: 75vw;
+	max-width: 400px;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	z-index: 10001;
+	background: #fff;
+	overflow-y: auto;
+	transform: translate3d(-100%, 0, 0);
+	will-change: transform, visibility;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+	animation-duration: 0.4s;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.667, 1, 0.667, 1)
+}
+.drawer.show .drawer-overlay {
+	opacity: 1;
+	visibility: visible;
+}
+.drawer.show .drawer-content {
+	animation-name: slideInLeft;
+}
+.drawer.hide .drawer-overlay {
+	opacity: 0;
+}
+.drawer.hide .drawer-content {
+	animation-name: slideOutLeft;
+}
+/* Left Navigation */
+.profile {
+  background-color: #673AB7;
+  padding: 32px 16px 16px;
+  color: #fff;
+	font-size: 20px;
+}
+.profile .avatar {
+	background-color: rgb(188, 188, 188);
+	user-select: none;
+	font-size: 20px;
+	border-radius: 50%;
+	height: 75px;
+	width: 75px;
+}
+.profile .name {
+  margin: 16px 0 3px 0;
+}
+.profile .email {
+  font-size: 14px;
+}
+.links .list {
+	border-bottom: solid 1px #e0e0e0;
+}
+.links .link {
+	padding: 16px;
+	display: block;
+}
+.links .icon {
+	width: 32px;
+	height: 32px;
+	margin-right: 16px;
+}
+/* Left Nav */
+
+/* Message Card */
+.message-card {
+	background-color: rgb(255, 255, 255);
+	box-sizing: border-box;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+	border-radius: 2px;
+	margin-bottom: 10px;
+	padding: 16px;
+}
+.message-card .sender {
+	display: flex;
+	align-items: center;
+	padding: 0;
+}
+.message-card .time {
+	color: rgba(0, 0, 0, 0.54);
+	font-size: 12px;
+	margin-top: 3px;
+	display: block;
+}
+.message-card .avatar {
+	width: 40px;
+	height: 40px;
+	background-color: #eee;
+	margin-right: 16px;
+	border-radius: 50%;
+	font-size: 0;
+}
+.message-card .message {
+	margin: 16px 0 2px 0;
+	color: rgba(0, 0, 0, 0.75);
+}
+

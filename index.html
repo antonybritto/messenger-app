@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link href="https://message-list.appspot.com" rel="preconnect">
+    <link href="https://message-list.appspot.com" rel="dns-prefetch">
+    <link rel="icon" href="/build/images/logo/message_96x96.png" type="image/x-icon">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#673AB7">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Messaging APP">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Messenger</title>
+    <style type="text/css">
+      /*! sanitize.css v4.1.0 | CC0 License | github.com/jonathantneal/sanitize.css */
+      article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden],template{display:none}*,:after,:before{background-repeat:no-repeat;box-sizing:inherit}:after,:before{text-decoration:inherit;vertical-align:inherit}html{box-sizing:border-box;cursor:default;font-family:sans-serif;line-height:1.5;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{height:0;overflow:visible}nav ol,nav ul{list-style:none}abbr[title]{border-bottom:1px dotted;text-decoration:none}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}progress{vertical-align:baseline}small,sub,sup{font-size:83.3333%}sub,sup{line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}::-moz-selection{background-color:#b3d4fc;color:#000;text-shadow:none}::selection{background-color:#b3d4fc;color:#000;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}img{border-style:none}svg{fill:currentColor}svg:not(:root){overflow:hidden}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:hover{outline-width:0}table{border-collapse:collapse;border-spacing:0}button,input,select,textarea{background-color:transparent;border-style:none;color:inherit;font-size:1em;margin:0}button,input{outline:none;overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto;resize:vertical}[type=checkbox],[type=radio]{padding:0}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-cancel-button,::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled]{cursor:default}[tabindex],a,area,button,input,label,select,textarea{-ms-touch-action:manipulation;touch-action:manipulation}[hidden][aria-hidden=false]{clip:rect(0,0,0,0);display:inherit;position:absolute}[hidden][aria-hidden=false]:focus{clip:auto}
+
+      /* Inline styles for server rendered content */
+      body {
+        font-size: 14px;
+        color: #212121;
+        line-height: 1.4;
+        font-family: 'Roboto',Helvetica,Arial,sans-serif;
+        letter-spacing: 0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      ul, ol, li, p, h1, h2, h3, h4, h5, h6, figure {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      a:link, a:visited, a:hover, a:active {
+        text-decoration: none;
+        color: #212121;
+        outline: none !important;
+      }
+      .animated {
+        animation-duration: 0.5s;
+        -webkit-animation-duration: 0.5s;
+        animation-fill-mode: both;
+        -webkit-animation-fill-mode: both;
+      }
+      #app {
+        background-color: #EEE;
+        min-height: 100vh;
+        height: 100%;
+      }
+      .app-content {
+        padding: 15px;
+      }
+      #app-bar {
+        background-color: #673AB7;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
+        height: 56px;
+        position: sticky;
+        width: 100%;
+        top: 0;
+        left: 0;
+        color: #fff;
+        z-index: 1;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+      }
+      #app-bar .header-icon {
+        width: 28px;
+        height: 28px;
+        margin-right: 16px;
+      }
+      #app-bar .heading {
+        font-size: 20px;
+        font-weight: 500;
+      }
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .loader {
+        font-size: 10px;
+        text-indent: -9999em;
+        margin-left: -16px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #FFF;
+        animation: rotate 1.4s infinite linear;
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, .26);
+        position: fixed;
+        bottom: 12px;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+      }
+      .loader:before {
+        width: 50%;
+        height: 50%;
+        background: #673AB7;
+        border-radius: 100% 0 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+      }
+      .loader:after {
+        background: #FFF;
+        width: 75%;
+        height: 75%;
+        border-radius: 50%;
+        content: '';
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript><strong>JavaScript has been disabled on your browser</strong>, please <strong>enable JS</strong> to make this app work.</noscript>
+    <section id="app"></section>
+    <link rel="stylesheet" href="build/app.css" media="all">
+    <script async src="build/app.js" type="text/javascript"></script>
+    <script type="text/javascript" type="text/javascript">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
+  </body>
+</html>
