@@ -70,7 +70,6 @@ function swipeToDelete() {
     this.startTime = new Date();
     this.elem.setAttribute('aria-grabbed', true);
     this.reset();
-    // this.restore(true);
   };
 
   Swipe.prototype.touchmove = function (e) {
@@ -101,21 +100,17 @@ function swipeToDelete() {
     e.stopPropagation();
   };
 
-  Swipe.prototype.delete = function (isForce) {
+  Swipe.prototype.delete = function () {
     this.animation(this.direction * this.width);
     this.swiped = true;
-    if (!isForce) {
-      this.transitionEnd(this.elem, this.onDelete);
-    }
+    this.transitionEnd(this.elem, this.onDelete);
     this.reset();
   };
 
-  Swipe.prototype.restore = function (isForce) {
+  Swipe.prototype.restore = function () {
     this.animation(0);
     this.swiped = false;
-    if (!isForce) {
-      this.transitionEnd(this.elem, this.onRestore);
-    }
+    this.transitionEnd(this.elem, this.onRestore);
     this.reset();
   };
 
@@ -140,11 +135,12 @@ function swipeToDelete() {
 
   Swipe.prototype.move = function () {
     const deltaAbs = Math.abs(this.delta);
-    if ((this.dir > 0 && (this.delta < 0 || this.left === 0)) || (this.dir < 0 && (this.delta > 0 || this.right === 0))) {
+    // if card is moved opposite to the configured direction then stop moving
+    if ((this.direction > 0 && (this.delta < 0 || this.left === 0)) || (this.direction < 0 && (this.delta > 0 || this.right === 0))) {
       return;
     }
     if (deltaAbs > this.width) {
-      this.delta = this.dir * (this.width + ((deltaAbs - this.width) / 8));
+      this.delta = this.direction * (this.width + ((deltaAbs - this.width) / 8));
     }
     this.animation(this.delta, 0);
   };
