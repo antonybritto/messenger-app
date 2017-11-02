@@ -65,7 +65,12 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const { hasMore, showDrawer, status, messages } = this.state;
+    const {
+      hasMore,
+      showDrawer,
+      status,
+      messages,
+    } = this.state;
     return [
       <AppBar
         key="app-bar"

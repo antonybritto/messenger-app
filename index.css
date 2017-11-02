@@ -51,7 +51,7 @@
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
 	animation-duration: 0.4s;
 	animation-fill-mode: both;
-	animation-timing-function: cubic-bezier(0.667, 1, 0.667, 1)
+	animation-timing-function: cubic-bezier(0.667, 1, 0.667, 1);
 }
 .drawer.show .drawer-overlay {
 	opacity: 1;
@@ -66,6 +66,7 @@
 .drawer.hide .drawer-content {
 	animation-name: slideOutLeft;
 }
+
 /* Left Navigation */
 .profile {
   background-color: #673AB7;

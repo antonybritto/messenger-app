@@ -20,6 +20,14 @@ class Drawer extends Component {
     return nextProps.show !== this.props.show;
   }
 
+  componentDidUpdate() {
+    if (this.props.show) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'initial';
+    }
+  }
+
   render() {
     const { isVisible } = this.state;
     const { show } = this.props;
